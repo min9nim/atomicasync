@@ -1,13 +1,16 @@
 # atomicasync
-`atomicasync` is a function that return function that received function excuted alone always
+`atomicasync` is a function that ensure that certain asynchronous functions are executed, independently, without being overlap
 
 
 ### Usage
 ```javascript
 import atomic from 'atomicasync'
 
-const atomicAsyncFn = atomic(asyncFn) // atomic 으로 래핑된 함수 asyncFn 은 어떤 상황에서도 순차적 실행이 보장된다
+const atomicAsyncFn = atomic(asyncFn)
 async () => {
+  /*
+  * atomicAsyncFn will be executed sequentially like using await
+  */
   atomicAsyncFn()
   atomicAsyncFn()
   atomicAsyncFn()
