@@ -1,7 +1,12 @@
 {
   "name": "atomicasync",
-  "version": "0.0.4",
-  "description": "",
+  "version": "0.0.5",
+  "description": "Ensure asynchronous function is executed independently and sequentially, without being overlap",
+  "keywords": [
+    "atomicasync",
+    "async",
+    "atomic"
+  ],   
   "main": "./src/index.js",
   "repository": {
     "type": "git",
@@ -10,7 +15,7 @@
   "scripts": {
     "test": "mocha test/atomicasync.spec.js"
   },
-  "author": "min9nim",
+  "author": "min9nim <min9nim@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.2.0",
