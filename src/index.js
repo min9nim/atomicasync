@@ -4,9 +4,14 @@ module.exports = function atomic(asyncFn) {
     queue.push(
       new Promise(async (resolve, reject) => {
         if(queue.length > 0){
-          await queue[queue.length - 1]
-          queue.shift()
-        }
+          try{
+            await queue[queue.length - 1]
+          }catch(e){
+            // console.error(e)
+          }finally{
+            queue.shift()
+          }
+        }        
         try{
           const resolved = await asyncFn(...args)
           resolve(resolved)
