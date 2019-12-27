@@ -1,6 +1,6 @@
 {
   "name": "atomicasync",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Ensure asynchronous function is executed independently and sequentially, without being overlap",
   "keywords": [
     "atomicasync",
