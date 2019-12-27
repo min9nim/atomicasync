@@ -34,4 +34,11 @@ describe('atomicasync', () => {
     const atomicAsyncFnResult = await atomicAsyncFn()
     expect(atomicAsyncFnResult).to.be.equal(asyncFnResult)
   })
+  // it('should handle exception', async () => {
+  //   const asyncFn = () => Promise.resolve(2)
+  //   const atomicAsyncFn = atomicasync(asyncFn)
+  //   const asyncFnResult = await asyncFn()
+  //   const atomicAsyncFnResult = await atomicAsyncFn()
+  //   expect(atomicAsyncFnResult).to.be.equal(asyncFnResult)
+  // })  
 })
