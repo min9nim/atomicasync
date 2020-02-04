@@ -1,5 +1,5 @@
-const {expect} = require('chai')
-const atomicasync = require('../src/index')
+import {expect} from 'chai'
+import atomicasync from '../src'
 
 describe('atomicasync', () => {
   it('should be excuted subsequentially with continuous call', async () => {

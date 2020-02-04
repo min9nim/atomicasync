@@ -1,5 +1,5 @@
-module.exports = function atomic(asyncFn) {
-  const queue = []
+export default function atomic(asyncFn){
+  const queue: any[] = []
   return (...args) => {
     queue.push(
       new Promise(async (resolve, reject) => {
