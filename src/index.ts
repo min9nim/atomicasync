@@ -1,24 +1,26 @@
-export default function atomic(asyncFn){
+export * from './atomic-option'
+
+export default function atomic(asyncFn) {
   const queue: any[] = []
   return (...args) => {
     queue.push(
       new Promise(async (resolve, reject) => {
-        if(queue.length > 0){
-          try{
+        if (queue.length > 0) {
+          try {
             await queue[queue.length - 1]
-          }catch(e){
+          } catch (e) {
             // console.error(e)
-          }finally{
+          } finally {
             queue.shift()
           }
-        }        
-        try{
+        }
+        try {
           const resolved = await asyncFn(...args)
           resolve(resolved)
-        }catch(e){
+        } catch (e) {
           reject(e)
         }
-      }),
+      })
     )
     return queue[queue.length - 1]
   }

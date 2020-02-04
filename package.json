@@ -1,12 +1,12 @@
 {
   "name": "atomicasync",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Ensure asynchronous function is executed independently and sequentially, without being overlap",
   "keywords": [
     "atomicasync",
     "async",
     "atomic"
-  ],   
+  ],
   "main": "./dist/index.js",
   "repository": {
     "type": "git",
@@ -24,10 +24,14 @@
     "@types/mocha": "^5.2.7",
     "@types/node": "^13.5.0",
     "chai": "^4.2.0",
+    "if-logger": "^0.6.6",
     "mocha": "^7.0.0",
     "sinon": "^8.1.1",
     "ts-node": "^8.5.4",
     "tslib": "^1.10.0",
-    "typescript": "^3.7.4"    
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {
+    "q": "^1.5.1"
   }
 }

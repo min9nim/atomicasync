@@ -17,7 +17,7 @@ describe('atomicasync', () => {
     asyncFn()
     await delay(150)
     expect(count).to.be.equal(2)
-  
+
     count = 0
     const atomicAsyncFn = atomicasync(asyncFn)
     atomicAsyncFn()
@@ -40,5 +40,5 @@ describe('atomicasync', () => {
   //   const asyncFnResult = await asyncFn()
   //   const atomicAsyncFnResult = await atomicAsyncFn()
   //   expect(atomicAsyncFnResult).to.be.equal(asyncFnResult)
-  // })  
+  // })
 })
