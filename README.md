@@ -1,6 +1,6 @@
 # atomicasync
 
-`atomicasync` is a function that ensure that certain asynchronous functions are executed, independently, without being overlap
+`atomicasync` is a function that ensure that certain asynchronous function is executed independently, without being overlap
 
 <br>
 
@@ -65,7 +65,7 @@ const obj = {
   },
 }
 
-const addAtomic = useAddAtomicOption() // new scope(closure) created
+const addAtomic = useAddAtomicOption() // New scope(closure) is created to manage order of async functions
 
 obj.async1 = addAtomic(obj.async1)
 obj.async2 = addAtomic(obj.async2, obj) //  2nd parameter(thisObj) is optional here, but required when function of 1st parameter use `this` reference
