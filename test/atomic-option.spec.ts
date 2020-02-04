@@ -149,4 +149,19 @@ async3 start
 async3 end`
     )
   })
+
+  it('should be binded this object', async () => {
+    const obj = {
+      str: 'hello',
+      fn() {
+        return Promise.resolve(this.str)
+      },
+    }
+    const result1 = await obj.fn()
+    expect(result1).to.be.equal('hello')
+    const addAtomicOption = useAddAtomicOption()
+    obj.fn = addAtomicOption(obj.fn, obj)
+    const result2 = await obj.fn()
+    expect(result2).to.be.equal('hello')
+  })
 })
