@@ -26,7 +26,7 @@ function asyncFn() {
   })
 }
 
-const atomicAsyncFn = atomic(asyncFn)
+const atomicAsyncFn = atomic(asyncFn) //  2nd parameter(thisObj) is required when asyncFn use `this`
 /*
  * atomicAsyncFn will be executed sequentially like using await
  */
