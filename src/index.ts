@@ -1,6 +1,6 @@
 export * from './atomic-option'
 
-export default function atomic(asyncFn) {
+export default function atomic(asyncFn: (...args: any[]) => Promise<any>, thisObj?: any) {
   const queue: any[] = []
   return (...args) => {
     queue.push(
@@ -15,7 +15,7 @@ export default function atomic(asyncFn) {
           }
         }
         try {
-          const resolved = await asyncFn(...args)
+          const resolved = await asyncFn.call(thisObj, ...args)
           resolve(resolved)
         } catch (e) {
           reject(e)

@@ -1,2 +1,2 @@
 export * from './atomic-option';
-export default function atomic(asyncFn: any): (...args: any[]) => any;
+export default function atomic(asyncFn: (...args: any[]) => Promise<any>, thisObj?: any): (...args: any[]) => any;

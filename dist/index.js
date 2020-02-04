@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 tslib_1.__exportStar(require("./atomic-option"), exports);
-function atomic(asyncFn) {
+function atomic(asyncFn, thisObj) {
     const queue = [];
     return (...args) => {
         queue.push(new Promise((resolve, reject) => tslib_1.__awaiter(this, void 0, void 0, function* () {
@@ -18,7 +18,7 @@ function atomic(asyncFn) {
                 }
             }
             try {
-                const resolved = yield asyncFn(...args);
+                const resolved = yield asyncFn.call(thisObj, ...args);
                 resolve(resolved);
             }
             catch (e) {
