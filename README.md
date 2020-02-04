@@ -45,7 +45,7 @@ Usable only [RORO pattern](https://www.freecodecamp.org/news/elegant-patterns-in
 import {useAddAtomicOption} from 'atomicasync'
 
 const obj = {
-  async1(args?: any) {
+  async1(args) {
     console.log(args.msg, 'start')
     return new Promise(resolve => {
       setTimeout(() => {
@@ -54,7 +54,7 @@ const obj = {
       }, 100)
     })
   },
-  async2(args?: any) {
+  async2(args) {
     console.log(args.msg, 'start')
     return new Promise(resolve => {
       setTimeout(() => {
