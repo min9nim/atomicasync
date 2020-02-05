@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 yarn test
 if [ $? -ne 0 ]; then
   echo "test failed"
