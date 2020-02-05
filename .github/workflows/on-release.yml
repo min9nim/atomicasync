@@ -16,6 +16,7 @@ jobs:
       - run: npm install
       - run: npm run test
       - run: npm run build
+      - run: ls -al dist
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
