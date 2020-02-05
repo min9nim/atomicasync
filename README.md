@@ -72,10 +72,10 @@ obj.async2 = addAtomic(obj.async2, obj) //  2nd parameter(thisObj) is optional h
 
 obj.async1({msg: 'A'}) // overlaped
 obj.async2({msg: 'B'}) // overlaped
-obj.async1({atomic: true, msg: 'C'}) // atomic call(not overlaped)
+obj.async1({atomic: true, msg: '*C*'}) // atomic call(not overlaped)
 obj.async2({msg: 'D'}) // overlaped
 obj.async2({msg: 'E'}) // overlaped
-obj.async2({atomic: true, msg: 'F'}) // atomic call(not overlaped)
+obj.async2({atomic: true, msg: '*F*'}) // atomic call(not overlaped)
 obj.async1({msg: 'G'}) // overlaped
 obj.async2({msg: 'H'}) // overlaped
 
@@ -84,14 +84,14 @@ A start
 B start
 A end
 B end
-C start
-C end
+*C* start
+*C* end
 D start
 E start
 D end
 E end
-F start
-F end
+*F* start
+*F* end
 G start
 H start
 G end
