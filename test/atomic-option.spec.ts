@@ -14,7 +14,7 @@ describe('atomic-option', () => {
         setTimeout(() => {
           log.push('async1 end')
           logger.verbose('async1 end')
-          resolve()
+          resolve(undefined)
         }, 10)
       })
     },

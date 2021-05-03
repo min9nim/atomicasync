@@ -1,5 +1,3 @@
-import Q from 'q'
-
 export function useAddAtomicOption() {
   let seq = 0
   let asyncResult = {}
@@ -17,7 +15,7 @@ export function useAddAtomicOption() {
             if (length > 0) {
               await atomicQueue[length - 1]
             }
-            await Q.allSettled(Object.values(asisAsyncResult))
+            await Promise.allSettled(Object.values(asisAsyncResult))
             try {
               const resolved = await originFn.call(thisObj, args)
               resolve(resolved)
