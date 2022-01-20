@@ -1,6 +1,11 @@
 export * from './atomic-option'
 
-export default function atomic(asyncFn: (...args: any[]) => Promise<any>, thisObj?: any) {
+type AsyncFunction<P extends any[], R extends Promise<any>> = (...args: P) => R
+
+export default function atomic<P extends any[],R extends Promise<any>>(
+  asyncFn: AsyncFunction<P,R>, 
+  thisObj?: any
+): typeof asyncFn {
   const queue: any[] = []
   return (...args) => {
     queue.push(
